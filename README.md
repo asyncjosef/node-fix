@@ -21,8 +21,7 @@ node src\cli.js
 Install globally from the project directory:
 
 ```powershell
-npm install -g .
-node-fix
+npm install -g @josephblitz/node-fix
 ```
 
 ## Commands
