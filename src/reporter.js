@@ -9,7 +9,7 @@ function report(project, results) {
 
     console.log("");
     console.log(
-        chalk.bold("Project Doctor")
+        chalk.bold("Node Fix")
     );
     console.log("");
 
@@ -59,7 +59,7 @@ function report(project, results) {
 
     console.log(
         chalk.gray(
-            "Run `project-doctor --fix` to apply safe fixes."
+            "Run `node-fix --fix` to apply safe fixes."
         )
     );
 

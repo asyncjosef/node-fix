@@ -1,10 +1,10 @@
 {
-  "name": "project-doctor",
+  "name": "@josephblitz/node-fix",
   "version": "0.4.0",
   "description": "CLI tool for diagnosing Node.js and JavaScript projects",
   "main": "src/cli.js",
   "bin": {
-    "project-doctor": "bin/project-doctor.js"
+    "node-fix": "bin/node-fix.js"
   },
   "files": [
     "bin",

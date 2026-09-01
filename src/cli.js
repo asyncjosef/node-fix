@@ -25,9 +25,9 @@ const program = new Command();
 
 
 program
-    .name("project-doctor")
+    .name("node-fix")
     .description("Diagnose and safely fix JavaScript projects")
-    .version("0.3.0");
+    .version("0.4.0");
 
 
 program
@@ -139,7 +139,7 @@ program.action((projectPath, options) => {
 
 
             console.log("");
-            console.log("Project Doctor");
+            console.log("Node Fix");
             console.log("");
 
 
@@ -198,7 +198,7 @@ program.action((projectPath, options) => {
 
 
             console.log("");
-            console.log("Project Doctor");
+            console.log("Node Fix");
             console.log("");
             console.log(
                 `OK Prepared ${result.files.length} file${
@@ -232,7 +232,7 @@ program.action((projectPath, options) => {
 
 
             console.log("");
-            console.log("Project Doctor");
+            console.log("Node Fix");
             console.log("");
 
 
@@ -401,7 +401,7 @@ program.action((projectPath, options) => {
 
 
             console.log(
-                "Run `project-doctor --security --fix` to fix safe secrets."
+                "Run `node-fix --security --fix` to fix safe secrets."
             );
 
             console.log("");

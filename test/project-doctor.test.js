@@ -17,7 +17,7 @@ function makeProject() {
     return fs.mkdtempSync(
         path.join(
             os.tmpdir(),
-            "project-doctor-"
+            "node-fix-"
         )
     );
 }

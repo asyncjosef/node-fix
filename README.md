@@ -1,6 +1,6 @@
-# Project Doctor
+# Node Fix
 
-Project Doctor is a fast Node.js CLI that checks JavaScript projects, finds security problems, applies conservative fixes, and prepares selected files for Git.
+Node Fix is a fast Node.js CLI that checks JavaScript projects, finds security problems, applies conservative fixes, and prepares selected files for Git.
 
 It reports the actual problem instead of inventing a health score.
 
@@ -22,7 +22,7 @@ Install globally from the project directory:
 
 ```powershell
 npm install -g .
-project-doctor
+node-fix
 ```
 
 ## Commands
@@ -30,25 +30,25 @@ project-doctor
 Diagnose the current project:
 
 ```powershell
-project-doctor
+node-fix
 ```
 
 Diagnose another project:
 
 ```powershell
-project-doctor C:\path\to\project
+node-fix C:\path\to\project
 ```
 
 Scan for exposed credentials:
 
 ```powershell
-project-doctor --security
+node-fix --security
 ```
 
 Apply high-confidence security fixes:
 
 ```powershell
-project-doctor --security --fix
+node-fix --security --fix
 ```
 
 This can move a recognized credential to `.env`, replace the source value with `process.env.NAME`, protect `.env` in `.gitignore`, and rescan the project.
@@ -56,7 +56,7 @@ This can move a recognized credential to `.env`, replace the source value with `
 Apply the currently safe general project fix:
 
 ```powershell
-project-doctor --fix
+node-fix --fix
 ```
 
 This creates a conservative `.gitignore` when one is missing. It does not invent npm scripts or rewrite application logic.
@@ -64,15 +64,15 @@ This creates a conservative `.gitignore` when one is missing. It does not invent
 Prepare specific files for Git:
 
 ```powershell
-project-doctor --git-ready src\cli.js package.json
+node-fix --git-ready src\cli.js package.json
 ```
 
-Project Doctor scans for security findings first and stages only the files named in the command. It never uses `git add -A`.
+Node Fix scans for security findings first and stages only the files named in the command. It never uses `git add -A`.
 
 Commit and push explicitly:
 
 ```powershell
-project-doctor --git-ready src\cli.js package.json --push --message "Improve project checks"
+node-fix --git-ready src\cli.js package.json --push --message "Improve project checks"
 ```
 
 `--push` requires `--git-ready` and a commit message. The project must already be inside a Git repository with a configured remote and usable Git credentials.
@@ -83,7 +83,7 @@ Prepare a new GitHub repository:
 2. From the local project directory, run:
 
 ```powershell
-project-doctor --github-repo project-doctor --username YOUR_GITHUB_USERNAME
+node-fix --github-repo node-fix --username YOUR_GITHUB_USERNAME
 ```
 
 This initializes Git when needed, creates a missing `README.md`, creates a missing `.gitignore`, adds the GitHub remote, and stages the project. Review the staged files before pushing.
@@ -91,22 +91,22 @@ This initializes Git when needed, creates a missing `README.md`, creates a missi
 When everything looks correct, push explicitly:
 
 ```powershell
-project-doctor --github-repo project-doctor --username YOUR_GITHUB_USERNAME --push --message "Initial release"
+node-fix --github-repo node-fix --username YOUR_GITHUB_USERNAME --push --message "Initial release"
 ```
 
-The GitHub repository must already exist. Project Doctor does not create remote repositories or handle GitHub passwords and tokens.
+The GitHub repository must already exist. Node Fix does not create remote repositories or handle GitHub passwords and tokens.
 
 Show all available options:
 
 ```powershell
-project-doctor --help
+node-fix --help
 ```
 
 The `--deps` option is reserved for the dependency scanner and is not implemented yet.
 
 ## Security model
 
-Project Doctor recognizes known credential formats such as Groq, OpenAI, GitHub, Google, Slack, JWT, and bearer tokens. It also detects suspicious hardcoded assignments such as API keys, tokens, secrets, and passwords.
+Node Fix recognizes known credential formats such as Groq, OpenAI, GitHub, Google, Slack, JWT, and bearer tokens. It also detects suspicious hardcoded assignments such as API keys, tokens, secrets, and passwords.
 
 Unknown credentials cannot be recognized reliably by one universal pattern. Ambiguous values should be reported for review rather than blindly rewritten. Automatic fixes are limited to high-confidence findings and make surgical source changes.
 
