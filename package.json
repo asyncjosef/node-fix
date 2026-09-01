@@ -1,36 +1,44 @@
 {
-  "name": "@josephblitz/node-fix",
-  "version": "0.4.0",
-  "description": "CLI tool for diagnosing Node.js and JavaScript projects",
-  "main": "src/cli.js",
-  "bin": {
-    "node-fix": "bin/node-fix.js"
-  },
-  "files": [
-    "bin",
-    "src",
-    "README.md"
-  ],
-  "scripts": {
-    "start": "node src/cli.js",
-    "dev": "node --watch src/cli.js",
-    "test": "node --test test"
-  },
-  "keywords": [
-    "cli",
-    "node",
-    "javascript",
-    "developer-tools",
-    "debugging"
-  ],
-  "author": "Joseph",
-  "license": "MIT",
-  "type": "commonjs",
-  "engines": {
-    "node": ">=20"
-  },
-  "dependencies": {
-    "chalk": "^4.1.2",
-    "commander": "^14.0.3"
-  }
+"name": "@josephblitz/node-fix",
+"version": "0.4.0",
+"description": "CLI tool for diagnosing and fixing Node.js and JavaScript projects",
+"main": "src/cli.js",
+"bin": {
+"node-fix": "bin/node-fix.js"
+},
+"files": [
+"bin",
+"src",
+"README.md"
+],
+"scripts": {
+"start": "node src/cli.js",
+"dev": "node --watch src/cli.js",
+"test": "node --test test"
+},
+"keywords": [
+"cli",
+"node",
+"dependency-check",
+"security",
+"developer-experience"
+],
+"author": "Joseph",
+"license": "MIT",
+"type": "commonjs",
+"engines": {
+"node": ">=20"
+},
+"dependencies": {
+"chalk": "^4.1.2",
+"commander": "^14.0.3"
+},
+"repository": {
+"type": "git",
+"url": "https://github.com/asyncjosef/node-fix.git"
+},
+"bugs": {
+"url": "https://github.com/asyncjosef/node-fix/issues"
+},
+"homepage": "https://github.com/asyncjosef/node-fix#readme"
 }
