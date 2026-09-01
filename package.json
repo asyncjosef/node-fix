@@ -1,0 +1,36 @@
+{
+  "name": "project-doctor",
+  "version": "0.4.0",
+  "description": "CLI tool for diagnosing Node.js and JavaScript projects",
+  "main": "src/cli.js",
+  "bin": {
+    "project-doctor": "bin/project-doctor.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "README.md"
+  ],
+  "scripts": {
+    "start": "node src/cli.js",
+    "dev": "node --watch src/cli.js",
+    "test": "node --test test"
+  },
+  "keywords": [
+    "cli",
+    "node",
+    "javascript",
+    "developer-tools",
+    "debugging"
+  ],
+  "author": "Joseph",
+  "license": "MIT",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^14.0.3"
+  }
+}
